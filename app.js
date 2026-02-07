@@ -16,7 +16,6 @@ btn.addEventListener("click", () => {
         tasks.push(userInput);
         console.log(tasks);
     }
-
 })
 
 
