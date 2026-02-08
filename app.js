@@ -14,8 +14,15 @@ btn.addEventListener("click", () => {
         taskList.appendChild(lists);
         inp.value = "";
         tasks.push(userInput);
+        let btn2 = document.createElement("button");
+        btn2.textContent = "Delete a Task";
+        lists.appendChild(btn2);
+        btn2.addEventListener("click", () => {
+            lists.remove();
+        })
         console.log(tasks);
     }
 })
+
 
 
