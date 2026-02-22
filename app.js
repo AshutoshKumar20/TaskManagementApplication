@@ -4,7 +4,7 @@ let taskList = document.getElementById("taskList");
 
 let tasks = [];
 
-btn.addEventListener("click", () => {
+let renderTasks = () => {
     let userInput = inp.value;
     if (!userInput.trim()) {
         console.log("No tasks to add");
@@ -22,6 +22,9 @@ btn.addEventListener("click", () => {
         })
         console.log(tasks);
     }
+}
+btn.addEventListener("click", () => {
+    renderTasks();
 })
 
 
