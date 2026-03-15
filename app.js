@@ -4,9 +4,10 @@ let taskList = document.getElementById("taskList");
 
 let tasks = [];
 
-let renderTasks = (userInput) => {
+let renderTasks = (task) => {
+
     let lists = document.createElement("li");
-    lists.innerText = userInput;
+    lists.innerText = task;
     taskList.appendChild(lists);
     inp.value = "";
 
@@ -14,7 +15,7 @@ let renderTasks = (userInput) => {
     btn2.textContent = "Delete a Task";
     lists.appendChild(btn2);
     btn2.addEventListener("click", () => {
-        let index = tasks.indexOf(userInput);
+        let index = tasks.indexOf(task);
         if (index !== -1) {
             tasks.splice(index, 1);
         }
@@ -25,9 +26,11 @@ let renderTasks = (userInput) => {
 }
 
 btn.addEventListener("click", () => {
+    taskList.innerHTML = "";
     let userInput = inp.value;
     if (!userInput.trim()) {
         console.log("No tasks to add");
+        return
     }
     tasks.push(userInput);
     renderTasks(userInput);
